@@ -2,9 +2,10 @@
 
 import random
 
-a = []
+
 
 def random_list(n):
+    a = []
     i = 0 
     while i < n:
         a.append(random.randrange(1000))
@@ -13,45 +14,41 @@ def random_list(n):
     return a
 
 
-
-def sort_asc(x):
-    print x
-
+def sort_asc(a):
     i = 0
-    while i < len(x):
+    while i < len(a):
         p = i
         j = i + 1
-        while j < len(x):
-            if x[j] < x[p]:
+        while j < len(a):
+            if a[j] < a[p]:
                 p = j
             j += 1
 
-        x[i], x[p] = x[p], x[i]
+        a[i], a[p] = a[p], a[i]
         # print a
 
         i += 1
 
-    return x
+    return a
 
-def sort_desc(x):
-    print x
-
+def sort_desc(a):
     i = 0
-    while i < len(x):
+    while i < len(a):
         p = i
         j = i + 1
-        while j < len(x):
-            if x[j] > x[p]:
+        while j < len(a):
+            if a[j] > a[p]:
                 p = j
             j += 1
 
-        x[i], x[p] = x[p], x[i]
+        a[i], a[p] = a[p], a[i]
         # print a
 
         i += 1
 
-    return x
+    return a
    
 
-random_list(10)
+a = random_list(10)
+print a
 print sort_desc(a)
