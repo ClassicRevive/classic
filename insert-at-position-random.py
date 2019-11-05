@@ -1,30 +1,36 @@
 #!/usr/bin/env python
 
 import random
+from time import sleep
 
-if __name__ == "__main__":
-    a = []
-    p = 0
-    v = 8
+a = []
+n = input("choose a list length: ")
+p = input("choose index to insert new number: ")
+v = input("enter the number you would like to be inserted: ")
 
-    k = 0
-    while k < 20:
-        a.append(random.randint(0,100))
-        k += 1
+
+print "this is my take on the insert function which is built into python"
+sleep(0.5)     
+
+k = 0
+while k < n:
+    a.append(random.randint(0,100)) # create random len25 integer list
+    k += 1
 
 print a
 
 i = 0
 while i < len(a) + 1:
     if i == p:
-        a.append(-0.5)
-        print a
+        a.append("!!")  # if position p exists in list, append target
+        # print a
         j = 1
-        while a[p] != -0.5:
-            a[-j], a[-j - 1] = a[-j - 1], a[-j]
+        while a[p] != "!!":
+            # swap "target" back until target pos is reached
+            a[-j], a[-j - 1] = a[-j - 1], a[-j]  
             j += 1
-            print a
-        a[p] = v
+            # print a
+        a[p] = v  # assign v at the pos of "target"
     i += 1
 
 print a
