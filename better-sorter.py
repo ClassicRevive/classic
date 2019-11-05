@@ -1,22 +1,57 @@
 #!/usr/bin/env python
 
+import random
 
-if __name__ == "__main__":
-    a = [1, 2, 54, 32, 86, 9, 19, 24]
+a = []
 
-print a
-i = 0
-while i < len(a):
-    p = i
-    j = i + 1
-    while j < len(a):
-        if a[j] < a[p]:
-            p = j
-        j += 1
+def random_list(n):
+    i = 0 
+    while i < n:
+        a.append(random.randrange(1000))
+        i += 1
 
-    a[i], a[p] = a[p], a[i]
-    # print a
+    return a
 
-    i += 1
 
-print a
+
+def sort_asc(x):
+    print x
+
+    i = 0
+    while i < len(x):
+        p = i
+        j = i + 1
+        while j < len(x):
+            if x[j] < x[p]:
+                p = j
+            j += 1
+
+        x[i], x[p] = x[p], x[i]
+        # print a
+
+        i += 1
+
+    return x
+
+def sort_desc(x):
+    print x
+
+    i = 0
+    while i < len(x):
+        p = i
+        j = i + 1
+        while j < len(x):
+            if x[j] > x[p]:
+                p = j
+            j += 1
+
+        x[i], x[p] = x[p], x[i]
+        # print a
+
+        i += 1
+
+    return x
+   
+
+random_list(10)
+print sort_desc(a)
