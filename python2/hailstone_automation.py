@@ -6,7 +6,7 @@ def auto_hail():
     
     n = 2
     i = 1
-    while i < 25:
+    while i < 100:
 
         while n != 1:
             if n == 1:

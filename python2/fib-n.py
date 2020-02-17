@@ -10,8 +10,8 @@ current = 1
 
 while i < n:
     # Do something
-    print prev
-
+    print "previous", prev, "current", current
+ 
     tmp = current
     current = prev + current
     prev = tmp

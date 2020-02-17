@@ -37,6 +37,6 @@ sleep(1)
 i = 0
 while i < len(message):
     print message[i]
-    sleep(1)
+    sleep(0.2)
     i += 1
 print message,

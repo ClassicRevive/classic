@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 import random
+import sys
 
-
-
+# generate random integer list of n length
 def random_list(n):
     a = []
     i = 0 
@@ -13,14 +13,22 @@ def random_list(n):
 
     return a
 
+# boolean for ascending sort
+def asc(a, b):
+    return a < b
 
-def sort_asc(a):
+# boolean for descending sort
+def desc(a, b):
+    return b < a
+    
+# selection sort algorithim
+def ssort(a, compare):
     i = 0
     while i < len(a):
         p = i
         j = i + 1
         while j < len(a):
-            if a[j] < a[p]:
+            if compare(a[j], a[p]):
                 p = j
             j += 1
 
@@ -31,24 +39,23 @@ def sort_asc(a):
 
     return a
 
-def sort_desc(a):
-    i = 0
-    while i < len(a):
-        p = i
-        j = i + 1
-        while j < len(a):
-            if a[j] > a[p]:
-                p = j
-            j += 1
 
-        a[i], a[p] = a[p], a[i]
-        # print a
+try:
+    arg = sys.argv[1]
 
-        i += 1
+    comparator = ""
+    if arg == "-a":
+        comparator = asc
+    elif arg == "-d":
+        comparator = desc
 
-    return a
-   
+    n = int(sys.argv[2])
+    a = random_list(n)
+    
+    print a
+    print ssort(a, comparator)
 
-a = random_list(10)
-print a
-print sort_desc(a)
+except:
+    print "illegal commandline arg (must be -a or -d then list length)"
+    print "ex. xxx.py -a 20"
+

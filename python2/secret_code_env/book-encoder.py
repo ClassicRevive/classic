@@ -40,6 +40,8 @@ while i < len(message):
 
     i += 1
 
+open("result-codes.txt", "w").close()
+
 i = 0
 while i < len(codes):
     sys.stdout.write(codes[i] + "\n")
