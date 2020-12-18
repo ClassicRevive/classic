@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import pandas as pd
+import numpt
 '''convert base 10 number to any base <= 10'''
 
 nnary = ""
